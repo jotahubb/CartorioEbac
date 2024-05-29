@@ -116,50 +116,66 @@ int main() // Função principal do programa
 {
     int opcao = 0; // Variável para armazenar a opção do menu
     int laco = 1; // Variável de controle do laço
+    char senhadigitada[40];
+    int comparacao;
+    
+    printf("### Cartório da Ebac ###\n\n");
+    printf("Login de administrador!\n\nDigite a sua senha: ");
+    scanf("%s", senhadigitada);
+    
+    comparacao = strcmp(senhadigitada, "admin");
+    
+    if(comparacao == 0)
+	{
+    	
 
-    while(laco == 1) // Laço infinito até o usuário decidir sair
-    {
-        system("cls"); // Limpa a tela
+    	while(laco == 1) // Laço infinito até o usuário decidir sair
+    	{
+        	system("cls"); // Limpa a tela
         
-        setlocale(LC_ALL, "Portuguese"); // Configura a localização para português
+        	setlocale(LC_ALL, "Portuguese"); // Configura a localização para português
         
-        // Exibe o menu para o usuário
-        printf("### Cartório da Ebac ###\n\n");
-        printf("Escolha a opção desejada do menu:\n\n");
-        printf("\t1 - Registrar nomes\n");
-        printf("\t2 - Consultar nomes\n");
-        printf("\t3 - Deletar nomes\n");
-        printf("\t4 - Sair do sistema\n\n");
-        printf("Opção: ");
+       		// Exibe o menu para o usuário
+       		printf("### Cartório da Ebac ###\n\n");
+        	printf("Escolha a opção desejada do menu:\n\n");
+        	printf("\t1 - Registrar nomes\n");
+        	printf("\t2 - Consultar nomes\n");
+        	printf("\t3 - Deletar nomes\n");
+        	printf("\t4 - Sair do sistema\n\n");
+        	printf("Opção: ");
 
-        scanf("%d", &opcao); // Lê a opção escolhida pelo usuário
+        	scanf("%d", &opcao); // Lê a opção escolhida pelo usuário
         
-        system("cls"); // Limpa a tela novamente
+        	system("cls"); // Limpa a tela novamente
         
-        switch(opcao) // Estrutura de decisão para executar a função correspondente
-        {
-            case 1:
-                registro(); // Chama a função de registro
-                break;
+        	switch(opcao) // Estrutura de decisão para executar a função correspondente
+        	{
+            	case 1:
+           	    	registro(); // Chama a função de registro
+                	break;
             
-            case 2:
-                consulta(); // Chama a função de consulta
-                break;
+            	case 2:
+                	consulta(); // Chama a função de consulta
+                	break;
             
-            case 3:
-                deletar(); // Chama a função de deletar
-                break;
+            	case 3:
+                	deletar(); // Chama a função de deletar
+                	break;
                 
-            case 4: 
-            	printf("Obrigado por utilizar o nosso sistema!");
-            	return 0;
-            	break;
+            	case 4: 
+            		printf("Obrigado por utilizar o nosso sistema!");
+            		return 0;
+            		break;
             
-            default:
-                printf("Essa opção não está disponível!");
-                system("pause");
-                break;
-        }
+            	default:
+                	printf("Essa opção não está disponível!");
+                	system("pause");
+                	break;
+            }
+    	}
     }
+    
+    else
+    	printf("Senha incorreta!");
 }
 
